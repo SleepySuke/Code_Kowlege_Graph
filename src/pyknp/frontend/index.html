@@ -1,0 +1,80 @@
+<!-- @Author suke @Date 2026-06-17 10:30:00 @Desc pyknp 前端 v4 — GitNexus 风格三栏布局：文件树 / 力导向图 / 详情+源码+调用链流程图 -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>pyknp · 知识图谱</title>
+  <link rel="stylesheet" href="/static/style.css?v=4">
+  <script src="/static/vis-network.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>pyknp · 知识图谱</h1>
+    <div class="upload-area">
+      <input type="file" id="zip-input" accept=".zip,.tar.gz,.tgz,.tar">
+      <input type="text" id="project-name" placeholder="项目名（可选）">
+      <button id="analyze-btn" disabled>Analyze</button>
+      <span id="status-msg"></span>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <div class="toolbar-group">
+      <label>节点类型：</label>
+      <label><input type="checkbox" data-ntype="function" checked> function</label>
+      <label><input type="checkbox" data-ntype="method" checked> method</label>
+      <label><input type="checkbox" data-ntype="nested" checked> nested</label>
+      <label><input type="checkbox" data-ntype="property" checked> property</label>
+      <label><input type="checkbox" data-ntype="http_endpoint" checked> endpoint</label>
+      <label><input type="checkbox" data-ntype="fixture" checked> fixture</label>
+    </div>
+    <div class="toolbar-group">
+      <label>边类型：</label>
+      <label><input type="checkbox" data-etype="import_fast_path" checked> fast</label>
+      <label><input type="checkbox" data-etype="jedi_goto" checked> jedi</label>
+      <label><input type="checkbox" data-etype="unresolved" checked> unresolved</label>
+    </div>
+    <div class="toolbar-group">
+      <label>聚焦深度：</label>
+      <select id="depth-filter">
+        <option value="0" selected>全部</option>
+        <option value="1">1 跳</option>
+        <option value="2">2 跳</option>
+        <option value="3">3 跳</option>
+      </select>
+      <button id="fit-btn">复位</button>
+      <button id="clear-sel-btn">清除选择</button>
+    </div>
+  </div>
+
+  <main>
+    <aside id="sidebar-left">
+      <h2>Stats</h2>
+      <div id="stats"></div>
+      <h2>Top PageRank</h2>
+      <ol id="pagerank-top"></ol>
+      <h2>Files</h2>
+      <div id="file-tree"></div>
+    </aside>
+
+    <section id="graph-container">
+      <div id="graph"></div>
+      <div id="legend"></div>
+    </section>
+
+    <aside id="sidebar-right" class="hidden">
+      <div class="detail-header">
+        <h2 id="detail-title"></h2>
+        <button id="detail-close" title="关闭">×</button>
+      </div>
+      <div id="detail-meta"></div>
+      <h3>调用链（caller → self → callee）</h3>
+      <div id="call-chain"></div>
+      <h3>源码片段</h3>
+      <pre id="source-code">点击节点加载源码…</pre>
+    </aside>
+  </main>
+
+  <script src="/static/app.js?v=4"></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+# tests/fixtures/sample_project/pyproject.toml: 让 jedi 把根目录识别为 package
+[project]
+name = "sample"
+version = "0.1.0"

@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+data/uploads/*
+data/runs/*
+data/index.json
+!data/uploads/.gitkeep
+!data/runs/.gitkeep
+docs/
+.claude/

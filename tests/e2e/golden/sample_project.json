@@ -1,0 +1,66 @@
+{
+  "propagated_tags_by_ref": {
+    "sample.db_utils.query_user": [
+      "database"
+    ],
+    "sample.fs_utils.read_config": [
+      "filesystem"
+    ],
+    "sample.main.handle_request": [
+      "compute_heavy",
+      "database",
+      "filesystem",
+      "network",
+      "subprocess"
+    ],
+    "sample.math_utils.compute_matrix": [
+      "compute_heavy"
+    ],
+    "sample.models.User.__init__": [],
+    "sample.models.User.email": [
+      "property"
+    ],
+    "sample.net_utils.fetch": [
+      "network"
+    ],
+    "sample.proc_utils.run_cmd": [
+      "subprocess"
+    ],
+    "sample.re_export.call_via_alias": [
+      "network"
+    ],
+    "sample.test_something.sample_data": [
+      "fixture"
+    ],
+    "sample.test_something.test_sample": [],
+    "sample.web_api.get_user": [
+      "http_endpoint"
+    ]
+  },
+  "ref_ids": [
+    "sample.db_utils.query_user",
+    "sample.fs_utils.read_config",
+    "sample.main.handle_request",
+    "sample.math_utils.compute_matrix",
+    "sample.models.User.__init__",
+    "sample.models.User.email",
+    "sample.net_utils.fetch",
+    "sample.proc_utils.run_cmd",
+    "sample.re_export.call_via_alias",
+    "sample.test_something.sample_data",
+    "sample.test_something.test_sample",
+    "sample.web_api.get_user"
+  ],
+  "tag_distribution": {
+    "compute_heavy": 2,
+    "database": 2,
+    "filesystem": 2,
+    "fixture": 1,
+    "http_endpoint": 1,
+    "network": 3,
+    "property": 1,
+    "subprocess": 2
+  },
+  "total_edges": 17,
+  "total_functions": 12
+}
