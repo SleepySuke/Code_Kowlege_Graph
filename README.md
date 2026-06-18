@@ -117,8 +117,8 @@ flowchart TB
 ```mermaid
 flowchart LR
     PY[".py 文件树"] --> S1["① ast"]
-    S1 -->|FunctionNode[]<br/>ImportTable[]| S2["② resolve"]
-    S2 -->|CallEdge[]<br/>location_id 回填| S3["③ tagging"]
+    S1 -->|FunctionNode<br/>ImportTable| S2["② resolve"]
+    S2 -->|CallEdge<br/>location_id 回填| S3["③ tagging"]
     S1 -.functions+imports.-> S3
     S3 -->|direct_tags| S4["④ graph"]
     S2 -.edges.-> S4
